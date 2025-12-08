@@ -62,11 +62,8 @@ public class BoardService {
     }
 
     @Transactional
-    public void addNewPost(PostDTO postDTO) {
-        postDTO.setCreatedAt(java.time.LocalDateTime.now());
-        postDTO.setUpdatedAt(java.time.LocalDateTime.now());
-        postDTO.setViewCount(0);
-        mapper.addNewPost(postDTO);
+    public void addPost(PostDTO postDTO) {
+        mapper.addPost(postDTO);
     }
 
     @Transactional
@@ -100,7 +97,7 @@ public class BoardService {
     }
 
     @Transactional
-    public void addNewComment(CommentDTO commentDTO) {
+    public void addComment(CommentDTO commentDTO) {
         commentDTO.setCreatedAt(java.time.LocalDateTime.now());
         commentDTO.setUpdatedAt(java.time.LocalDateTime.now());
         mapper.addComment(commentDTO);
